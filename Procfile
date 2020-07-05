@@ -1,1 +1,1 @@
-web: python mailtest.py
+clock: python mailtest.py
