@@ -5,11 +5,7 @@ from email.mime.text import MIMEText
 import time
 
 def mail():
-    mail_content = '''
-    
-                          Note:do not reply this is system generated mail.
-    
-        '''
+    mail_content ='''Note:do not reply this is system generation'''
     # The mail addresses and password
     sender_address = 'pnitech20@gmail.com'
     sender_pass = '882838916388'
@@ -18,7 +14,7 @@ def mail():
     message = MIMEMultipart()
     message['From'] = sender_address
     message['To'] = receiver_address
-    message['Subject'] = 'TEST'  # The subject line
+    message['Subject'] = 'TEST Mail from Heroku'  # The subject line
     # The body and the attachments for the mail
     message.attach(MIMEText(mail_content, 'plain'))
     # Create SMTP session for sending the mail
@@ -32,9 +28,11 @@ def mail():
 while True:
     x=datetime.now()
     min=x.minute
-    if min%5==0:
-        print("yes")
+    if min%2==0:
+        # print("yes")
         mail()
+        time.sleep(60)
     else:
-        print("no")
-    time.sleep(60)
+        # print("no")
+
+
